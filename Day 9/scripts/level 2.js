@@ -45,10 +45,31 @@ console.log(categorizeCountries(countries));
 // 4. Create a function which return an array of objects,
 // which is the letter and the number of times the letter use to start with a name of a country.
 
-// function countStartingLetters(arr) {
+function countStartingLetters(countries) {
+   let letterCount = {};
 
-//   }
-// console.log(countStartingLetters(countries))
+   for (const country of countries) {
+       const firstLetters = country.name.charAt(0);
+
+  for (const firstLetter of firstLetters) {
+      if (letterCount.hasOwnProperty(firstLetter)) {
+          letterCount[firstLetter]++;
+      } else {
+          letterCount[firstLetter] = 1;
+      }
+   }    
+  }
+  const sortedLetters = Object.entries(letterCount);
+  console.log(sortedLetters)
+
+  const result = sortedLetters.map(([firstLetter, count]) => ({
+    Letter: firstLetter,
+    count: count
+  }))
+
+  return result;
+  }
+console.log(countStartingLetters(countries))
 
 
 // 5. Declare a getFirstTenCountries function and return an array of ten countries.
