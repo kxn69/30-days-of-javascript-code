@@ -16,22 +16,23 @@ const numberArray = [1, 2, 3, 4, 5, 6, 7];
 
 
 // 4. Get the first item, the middle item and the last item of the array
-let firstItem = numberArray[0];
-  console.log(firstItem);
-let middleItem = numberArray[3];
-  console.log(middleItem)
-let lastItemIndex = numberArray.length - 1
-  lastItem = numberArray[lastItemIndex]
-  console.log(lastItem);
+const firstItem = numberArray[0];
+console.log(firstItem);
+
+const middleItem = numberArray[3];
+console.log(middleItem)
+
+const lastItem = numberArray[numberArray.length - 1]
+console.log(lastItem);
 
 
 // 5. Declare an array called mixedDataTypes, put different data types
 // in the array and find the length of the array. The array size should be greater than 5
 const mixedDataTypes = ['bob', 5, true, undefined, {hobby: 'swimming'}, null]
-  console.log(mixedDataTypes.length)
+console.log(mixedDataTypes.length)
 
-  // 6. Declare an array variable name itCompanies and assign initial values
-  // Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
+// 6. Declare an array variable name itCompanies and assign initial values
+// Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
 const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
 console.log('No of companies:', itCompanies.length)
 console.log('First Company:', itCompanies[0]) 
@@ -43,7 +44,7 @@ console.log(itCompanies)
 
 
 // 8. Print the number of companies in the array
-console.log('No of comapnies:', itCompanies.length)
+console.log('No of companies:', itCompanies.length)
 
 
 // 9. Print the first company, middle and last company
@@ -74,8 +75,8 @@ console.log(itCompanies[6].toUpperCase())
 
 // 12. Print the array like as a sentence: Facebook, Google, Microsoft,
 // Apple, IBM,Oracle and Amazon are big IT companies.
-let listOfCompanies = itCompanies.join(', ')
-let sentence = `${listOfCompanies} are big IT companies.`
+const listOfCompanies = itCompanies.join(', ')
+const sentence = `${listOfCompanies} are big IT companies.`
 console.log(sentence);
 
 
@@ -87,7 +88,7 @@ itCompanies.includes(isCompany) ? console.log(isCompany) : console.log( 'company
 
 
 // 14. Filter out companies which have more than one 'o' without the filter method
-let companiesWithOO = [];
+const companiesWithOO = [];
 for (let i = 0; i < itCompanies.length; i++) {
     if ( itCompanies[i].includes('oo')) {
         companiesWithOO.push(itCompanies[i])

@@ -22,6 +22,8 @@ do {
     console.log(num)
     num++
 } while (num <= 10)
+
+
 // 2. Iterate 10 to 0 using for loop, do the same using while and do while loop
 // i. using for loop
 for (let i = 10; i >= 0; i--) {
@@ -109,7 +111,7 @@ console.log(`The sum of all numbers from 0 to 100 is ${sum}.`)
 // 11. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
 let evenSum = 0;
 let oddSum = 0;
-let sumOddArray = [];
+const sumArray = [];
 
 // for even number
 for (let i = 0; i <= 100; i++) {
@@ -125,14 +127,14 @@ for (let i = 0; i <= 100; i++) {
     }
 }
 
-console.log(`The sum of all evens from 0 to 100 is ${evenSum}. And the sum of all odds from 0 to 100 is ${oddSum}.`)
+console.log(`The sum of all evens from 0 to 100 is ${evenSum} and the sum of all odds from 0 to 100 is ${oddSum}.`)
 
 
 // 12. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
-sumOddArray.push(evenSum)
-sumOddArray.push(oddSum)
+sumArray.push(evenSum)
+sumArray.push(oddSum)
 
-console.log(sumOddArray)
+console.log(sumArray)
 
 
 // 13. Develop a small script which generate array of 5 random numbers
@@ -145,15 +147,16 @@ console.log(random_array)
 
 
 // 14. Develop a small script which generate array of 5 random numbers and the numbers must be unique
-let rndm = [];
+let randomNumbers = [];
 
-while (rndm.length < 5) {
-    let num = Math.floor(Math.random() * 10) + 1
-    if (!rndm.includes(num)) {
-        rndm.push(num);
+while (randomNumbers.length < 5) {
+    let num = Math.floor(Math.random() * 10) + 1;
+    
+    if (!randomNumbers.includes(num)) {
+        randomNumbers.push(num);
     }
 }
-console.log(rndm)
+console.log(randomNumbers)
 
 
 // 15. Develop a small script which generate a six characters random id:

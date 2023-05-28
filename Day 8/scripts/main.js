@@ -35,5 +35,3 @@ dog.getDogInfo = function() {
     let statement = `The dog's name is ${this.name}, he's a ${this.breed} and also ${this.age} years old.`
     return statement;
 }
-console.log(dog);
-console.log(dog.getDogInfo);

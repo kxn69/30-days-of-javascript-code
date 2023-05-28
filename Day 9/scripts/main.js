@@ -16,9 +16,9 @@ const products = [
 
 // 1. Explain the difference between forEach, map, filter, and reduce.
 
-/* for each is used only with arrays while 
-(map) is used to modify array Element
-filter is used to fufil a condition and return a new array
+/* for each is used to iterate elements while 
+map creates a new array by calling a provided function
+filter is used to fulfill a condition and return a new array
 and reduce returns a single value from a calculation of the preceding element */
 
 
@@ -70,8 +70,8 @@ console.log(capitalNames);
 
 // 10. Use map to map the products array to its corresponding prices.
 
-const mappedArray = products.map((item) => item.price)
-console.log(mappedArray)
+const mappedArray = products.map((item) =>  item.price)
+console.log(mappedArray);
 
 
 // 11. Use filter to filter out countries containing land.
@@ -101,7 +101,7 @@ console.log(countriesWithE);
 // 15. Use filter to filter out only prices with values.
 
 
-const filteredProducts = products.filter(item => typeof item.price === 'number' );
+const filteredProducts = products.filter(item => typeof item.price === 'number');
 console.log(filteredProducts);
 
 
@@ -139,7 +139,8 @@ console.log(finalSentence);
 
 // 19. Explain the difference between some and every
 
-// some checks if some of the elements are similar, while every checks all
+// some checks if at least one of the elements are satisfies a testing function, 
+// while every checks if all satisfies
 
 // 20. Use some to check if some names' length greater than seven in names array
 
@@ -150,14 +151,14 @@ console.log(namesGreaterThan7);
 // 21. Use every to check if all the countries contain the word land
 
 
-const landCountries = countries2.every((item) => item.match(landRegex))
+const landCountries = countries2.every((item) => item.includes('land'))
 console.log(landCountries);
 
 
 // 22. Explain the difference between find and findIndex.
 
 // find returns the first value that satisfies the solution while
-// findIndex returns the first index of the positon that satisfies the solution
+// findIndex returns the first index of the position that satisfies the solution
 
 
 //23. Use find to find the first country containing only six letters in the countries array

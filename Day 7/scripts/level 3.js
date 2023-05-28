@@ -14,7 +14,7 @@ function userIdGenerator() {
       for (let j = 0; j < numChars; j++) {
         result += chars.charAt(Math.floor(Math.random() * chars.length));
       }
-      result += '\n'; // Add a new line character between each ID
+      result += '\n';
     }
     return result;
   }
@@ -193,9 +193,10 @@ console.log(numberSums(1,2,3,4));
 // 12. Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items.
 // Check if all the array items are number types. If not give return reasonable feedback.
 
-const rtrt = [1, 2, 3, 4, 5]
+const arrayOfNumbers = [1, 2, 3, 4, 5]
 function sumOfArrayItems(arr) {
-    let sum = 0
+    let sum = 0;
+
     for (let i = 0; i < arr.length; i++) {
         if (typeof arr[i] !== 'number') {
             return 'Error: All array items must be numbers';
@@ -204,7 +205,7 @@ function sumOfArrayItems(arr) {
     }
     return sum;
 }
-console.log(sumOfArrayItems(rtrt));
+console.log(sumOfArrayItems(arrayOfNumbers));
 
 
 // 13. Write a function called average, it takes an array parameter and returns the average of the items.
@@ -221,12 +222,11 @@ function average(array) {
     }
     return `average is ${avr}`;
 }
-console.log(average(rtrt));
+console.log(average(arrayOfNumbers));
 
 
 // 14. Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array.
 // If the array length is less than five it return 'item not found'.
-const array2 = [1,2,3,4];
 
 function modifyArray(arr) {
     if (arr.length < 5) {
@@ -236,7 +236,9 @@ function modifyArray(arr) {
       return arr;
     }
   }
-console.log(modifyArray(array2))
+console.log(modifyArray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']));
+
+
 // 15. Write a function called isPrime, which checks if a number is prime number.
 
 function isPrime(num) {
@@ -280,7 +282,7 @@ function isUnique(arr) {
     }
     return true;
 }
-const array1 = ['name', 1, 1, 2, 3];
+const array1 = ['name', 1, 2, 3];
 console.log(isUnique(array1))
 
 //  function isUnique(arr) {
@@ -298,23 +300,21 @@ console.log(isUnique(array1))
 // 17. Write a function which checks if all the items of the array are the same data type.
 
 function sameDataType(arr) {
-    for (let i = 1; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       if (typeof arr[i] !== typeof arr[0]) {
         return false;
       }
     }
     return true;
   }
-
+console.log(sameDataType(arrayOfNumbers))
 
 // 18. JavaScript variable name does not support special characters or symbols except $ or _.
 // Write a function isValidVariable which check if a variable is valid or invalid variable.
 
-function isValidVariable(str) {
-    // Check if string starts with a letter, underscore or dollar sign
-    if (/^[a-zA-Z$_]/.test(str)) {
-      // Check if string contains only valid characters
-      return /^[a-zA-Z0-9$_]*$/.test(str);
+function isValidVariable(variableName) {
+    if (/^[a-zA-Z$_]/.test(variableName)) {
+      return true
     }
     return false;
   }
@@ -339,10 +339,15 @@ console.log(generateRandomNumbers());
 // 20. Write a function called reverseCountries,
 // it takes countries array and first it copy the array and returns the reverse of the original array
 
-let newCountries = [].concat(countries);
 
-function reverseCountries(countries) {
-    const reversedCountries = [...newCountries].reverse();
-    return reversedCountries;
+function reverseCountries(array) {
+  const countriesCopy = [];
+
+  for (element of array) {
+    countriesCopy.push(element);
+  }
+  console.log(countriesCopy);
+  const reversedArray = array.reverse();
+  console.log(reversedArray);
   } 
-console.log(reverseCountries())
+console.log(reverseCountries(countries))

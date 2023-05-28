@@ -13,12 +13,12 @@ console.log(challenge.length);
 
 
 // 4. changing the string characters to capital letters using uppercase()
-let capitalStr = challenge.toUpperCase();
+const capitalStr = challenge.toUpperCase();
 console.log(capitalStr);
 
 
 // 5. changing the string characters to capital letters using lowercase()
-let lowerStr = challenge.toLowerCase();
+const lowerStr = challenge.toLowerCase();
 console.log(lowerStr);
 
 
@@ -97,7 +97,7 @@ console.log(challenge.endsWith('Script'));
 
 
 // 23. Use match() method to find all the a’s in 30 Days Of JavaScript
-let pattern = /a/g;
+const pattern = /a/g;
 console.log(challenge.match(pattern));
 
 

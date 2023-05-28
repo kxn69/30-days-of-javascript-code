@@ -1,18 +1,20 @@
 // Exercise level 3
 
+
 // 1. Write a program which tells the number of days in a month.
-let year = prompt('Enter a year:')
-let month = prompt('Enter a month:',).toLowerCase()
+
+const year = prompt('Enter a year:')
+const month = prompt('Enter a month:',).toLowerCase()
 
 if (month === 'january' || month === '1') {
     let january = 1
     getDays = new Date(year, january, 0).getDate();
     alert(`January has ${getDays} days`)
 
- } else if (month === 'febuary' || month === '2') {
-    let febuary = 2
-    getDays = new Date(year, febuary, 0).getDate();
-    alert(`Febuary has ${getDays} days`)
+ } else if (month === 'february' || month === '2') {
+    let february = 2
+    getDays = new Date(year, february, 0).getDate();
+    alert(`february has ${getDays} days`)
 
  } else if (month === 'march' || month === '3') {
     let march = 3

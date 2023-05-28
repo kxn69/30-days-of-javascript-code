@@ -23,7 +23,7 @@ console.log(countriesByPopulation);
 
 
 // 2.  Find the 10 most spoken languages:
-function mostSpokenLanguages(countries, limit) {
+function mostSpokenLanguages(countries) {
     const languageCount = {};
   
     // Count the number of countries speaking each language
@@ -39,10 +39,10 @@ function mostSpokenLanguages(countries, limit) {
       }
     }
   
-    // Sort the languages by count in descending order
+    // Sorting the languages by count in descending order
     const sortedLanguages = Object.entries(languageCount)
       .sort((a, b) => b[1] - a[1])
-      .slice(0, limit);
+      .slice(0, 10);
   
     // Format the result in the desired output format
     const result = sortedLanguages.map(([language, count]) => ({
@@ -53,28 +53,30 @@ function mostSpokenLanguages(countries, limit) {
     return result;
   }
   
-  console.log(mostSpokenLanguages(countries, 3));
+  console.log(mostSpokenLanguages(countries));
 
 
 // 3. Use countries_data.js file create a function which create the ten most populated countries
 
-function mostPopulatedCountries(countries, count) {
+function mostPopulatedCountries(countries) {
     // Sort the countries array based on population in descending order
-    countries.sort((a, b) => b.population - a.population);
+    const sortedPopulation = countries.sort((a, b) => b.population - a.population);
   
     // Slice the sorted array to get the top `count` countries
-    const topCountries = countries.slice(0, count);
+    const topCountries = sortedPopulation.slice(0, 10);
   
     // Create a new array with country names and populations only
     const result = topCountries.map(country => {
       return {
-        country: country.country,
+        country: country.name,
         population: country.population
       };
     });
   
     return result;
   }
+console.log(mostPopulatedCountries(countries, 10))
+
 
 // 4. Try to develop a program which calculate measure of central tendency of a sample(mean, median, mode)
 // and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max,
@@ -135,7 +137,7 @@ class Statistics {
   
         if (count > maxCount) {
           maxCount = count;
-          mode = [value];
+          mode = [value]
         } else if (count === maxCount) {
           mode.push(value);
         }
@@ -158,41 +160,23 @@ class Statistics {
       const counts = new Map();
   
       for (const value of this.data) {
-        let count = counts.get(value) || 0;
+        let count = counts.get(value) ||   0;
         count++;
         counts.set(value, count);
       }
   
       return Array.from(counts.entries());
     }
-  
-    describe() {
-      return {
-        count: this.count(),
-        sum: this.sum(),
-        min: this.min(),
-        max: this.max(),
-        range: this.range(),
-        mean: this.mean(),
-        median: this.median(),
-        mode: this.mode(),
-        variance: this.var(),
-        std: this.std(),
-        freqDist: this.freqDist(),
-      };
-    }
   }
   
-  const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26];
+const statistics = new Statistics(data);
   
-  const statistics = new Statistics(ages);
-  
-  console.log('Count:', statistics.count()); // 25
-  console.log('Sum: ', statistics.sum()); // 744
-  console.log('Min: ', statistics.min()); // 24
-  console.log('Max: ', statistics.max()); // 38
-  console.log('Range: ', statistics.range()); // 14
-  console.log('Mean: ', statistics.mean()); // 30
-  console.log('Median: ',statistics.median()); // 29
-  console.log('Mode: ', statistics.mode()); // { mode: [26], count: 5 }
-  console.log('Variance: ', statistics.var()); // 17.5
+console.log('Count:', statistics.count()); // 25
+console.log('Sum: ', statistics.sum()); // 744
+console.log('Min: ', statistics.min()); // 24
+console.log('Max: ', statistics.max()); // 38
+console.log('Range: ', statistics.range()); // 14
+console.log('Mean: ', statistics.mean()); // 30
+console.log('Median: ',statistics.median()); // 29
+console.log('Mode: ', statistics.mode()); // { mode: [26], count: 5 }
+console.log('Variance: ', statistics.var()); // 17.52

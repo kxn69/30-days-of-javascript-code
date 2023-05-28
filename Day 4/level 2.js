@@ -1,8 +1,9 @@
 // Exercise level 2
 
 // 1. Write a code which can give grades to students according to theirs scores:
-let score = 79;
-if (score >= 80 && score <= 100) {
+
+const score = 89;
+if (score >= 80) {
     console.log('A');
 } else if (score >= 70 && score <= 79) {
     console.log('B');
@@ -20,12 +21,15 @@ if (score >= 80 && score <= 100) {
 // December, January or February, the season is Winter.
 // March, April or May, the season is Spring
 // June, July or August, the season is Summer
-let userInput = 'December';
-if (userInput == 'September' || userInput == 'October' || userInput == 'November') {
+
+const userInput = 'March';
+if (userInput === 'September' || userInput === 'October' || userInput === 'November') {
     console.log('The season is Autumn');
-} else if (userInput == 'December' || userInput == 'January' || userInput == 'Febuary') {
+} else if (userInput === 'December' || userInput === 'January' || userInput === 'February') {
     console.log('the season is Winter');
-} else if (userInput == 'June' || userInput == 'July' || userInput == 'August') {
+} else if (userInput === 'March' || userInput === 'April' || userInput === 'May') {
+    console.log('the season is Spring');
+} else if (userInput === 'June' || userInput === 'July' || userInput === 'August') {
     console.log('the season is Summer');
 } else {
     console.log('Enter a valid month')
@@ -33,17 +37,18 @@ if (userInput == 'September' || userInput == 'October' || userInput == 'November
 
 
 // 3. Check if a day is weekend day or a working day. Your script will take day as an input.
-// let isDay = prompt('What is the day today:').toLowerCase();
+
+// const isDay = prompt('What is the day today:').toLowerCase();
 // switch(isDay) {
 //     case 'monday':
 //     case 'tuesday':
 //     case 'wednesday':
 //     case 'thursday':
 //     case 'friday':
-//         console.log(`${isDay} is a working day.`)
+//         console.log(`${isDay} is a working day!`)
 //     break
 //     case 'saturday':
 //     case 'sunday':
-//         console.log(`${isDay} is a weekend.`)
+//         console.log(`${isDay} is a weekend!`)
 //     break
 // }

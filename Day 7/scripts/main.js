@@ -5,20 +5,18 @@
 
 // 1. Declare a function fullName and it print out your full name.
 
-// function fullName() {
-//     const firstName = 'Ariyo';
-//     const lastName = 'Matthew';
-//     const space = ' ';
-//     console.log(firstName + space + lastName)
-// }
-// fullName();
+function myFullName() {
+    const firstName = 'Ariyo';
+    const lastName = 'Matthew';
+    return `${firstName} ${lastName}`;
+}
+console.log(myFullName());
 
 
 // 2. Declare a function fullName and now it takes firstName, 
 // lastName as a parameter and it returns your full - name.
 
 function fullName(firstName, lastName) {
-    const space = ' ';
     return `Your full name is: ${firstName} ${lastName}`
 }
 console.log(fullName('Ariyo', 'Matthew'));
@@ -26,7 +24,7 @@ console.log(fullName('Ariyo', 'Matthew'));
 
 // 3. Declare a function addNumbers and it takes two two parameters and it returns sum.
 
-const addNumbers = (num1, num2) => num1 + num2
+const addNumbers = (num1, num2) => num1 + num2;
 console.log(addNumbers(2, 3));
 
 
@@ -65,7 +63,7 @@ console.log(areaOfCircle(10))
 // 8. Circumference of a circle is calculated as follows:
 //  circumference = 2πr. Write a function which calculates circumOfCircle
 
-const circumOfCircle = r => {
+const circumOfCircle = (r) => {
     let circumference = 2 * Math.PI * r;
     return circumference;
 }
@@ -88,7 +86,7 @@ console.log(density(2, 10))
 // Write a function which calculates a speed of a moving object, speed.
 
 const speed = (distance, time) => {
-    let speed = distance * time;
+    let speed = distance / time;
     return `${speed} m/s`
 }
 console.log(speed(5, 10))
@@ -164,4 +162,4 @@ const findMax = (num1, num2, num3) => {
     return max
 }
 
-console.log(findMax(1, 5, 3));XMLDocument
+console.log(findMax(1, 5, 3));

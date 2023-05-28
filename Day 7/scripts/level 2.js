@@ -3,21 +3,37 @@
 // 1. Linear equation is calculated as follows: ax + by + c = 0.
 // Write a function which calculates value of a linear equation, solveLinEquation.
 
-const solveLinEquation = (a, b, c) => {
-    
-}
+function solveLinEquation(a, b, c, x) {
+    return (-c - (a * x)) / b;
+  }
+  
 
 
 // 2. Quadratic equation is calculated as follows: ax2 + bx + c = 0.
 // Write a function which calculates value or values of a quadratic equation, solveQuadEquation.
 
+function solveQuadEquation(a, b, c) {
+    const discriminant = (b * b) - (4 * a * c);
+  
+    if (discriminant > 0) {
+      const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+      const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+      return [root1, root2];
+    } else if (discriminant === 0) {
+      const root = -b / (2 * a);
+      return [root];
+    } else {
+      return [];
+    }
+  }
 
 // 3. Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
 
 const printArray = arr => {
-    console.log(arr)
+    for (element of arr) {
+        console.log(element)
+    }
 }
-
 const numbers = [1,2,3,4,5]
 printArray(numbers)
 
@@ -31,7 +47,10 @@ const showDateTime = () => {
     let day = now.getDay();
     let hour = now.getHours();
     let minute = now.getMinutes();
-
+    hour = hour <= 9 ? '0' + hour : hour;
+    minute = minute <= 9 ? '0' + minute : minute;
+    month = month <= 9 ? '0' + month : month;
+    day = day <= 9 ? '0' + day : day
     return `${month}/${day}/${year} ${hour}:${minute}`
 }
 
@@ -65,11 +84,11 @@ console.log(reverseArray(array))
 
 
 // 7. Declare a function name capitalizeArray.
-// It takes array as a parameter and it returns the - capitalizedarray.
+// It takes array as a parameter and it returns the - capitalizedArray.
 
 const names = ['randy', 'dondy', 'mondy', 'sondy'];
 
-function capitalizedarray (arr) {
+function capitalizedArray (arr) {
     const capitalized = [];
 
     for (let i = 0; i < arr.length; i++) {
@@ -78,7 +97,7 @@ function capitalizedarray (arr) {
     }
     return capitalized;
 }
-console.log(capitalizedarray(names));
+console.log(capitalizedArray(names));
 
 
 // 8. Declare a function name addItem.
@@ -102,7 +121,7 @@ const removeItem = (array, index) => {
     return array;
 }
 
-console.log(removeItem(names, 2));
+console.log(removeItem(names, 1));
 
 
 // 10. Declare a function name sumOfNumbers.

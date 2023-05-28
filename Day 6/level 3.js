@@ -13,16 +13,12 @@ sortedCountries.push(countries.sort())
 console.log(sortedCountries)
 
 
-
-
-
-
 // 3. Sort the webTechs array and mernStack array
-let sortedWebTechs = webTechs.sort()
+const sortedWebTechs = webTechs.sort()
 console.log(sortedWebTechs)
 
 // sorting mernStack array
-let sortedMernStack = mernStack.sort()
+const sortedMernStack = mernStack.sort()
 console.log(sortedMernStack)
 
 
@@ -51,14 +47,14 @@ console.log(country)
 
 
 // 7. Extract all the countries containing only four characters from the countries array and print it as array
-const countriesWith4 = [];
+const countriesWith4Chars = [];
 for (let i = 0; i < countries.length; i++) {
     let country = countries[i]
     if (country.length === 4) {
-        countriesWith4.push(country)
+        countriesWith4Chars.push(country)
     }
 }
-console.log(countriesWith4)
+console.log(countriesWith4Chars)
 
 
 // 8. Extract all the countries containing two or more words from the countries array and print it as array
@@ -74,10 +70,11 @@ console.log(newCountries2)
 
 // 9. Reverse the countries array and capitalize each country and stored it as an array
 const capitalCountries = [];
-let reverseCountries = countries.reverse()
+const reverseCountries = countries.reverse()
 
-for (let i = 0; i < reverseCountries.length; i++) {
-    let reverseCountry = reverseCountries[i]
-    capitalCountries.push(reverseCountry.toUpperCase())
+for (const country of reverseCountries) {
+    const capitalCountry = country.toUpperCase()
+    capitalCountries.push(capitalCountry)
+    
 }
-console.log(capitalCountries)
+console.log(capitalCountries);

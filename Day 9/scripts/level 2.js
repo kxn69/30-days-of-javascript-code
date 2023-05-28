@@ -12,15 +12,6 @@ console.log(ProductsWithPrices)
 
 // 2. Find the sum of price of products using only reduce reduce(callback))
 
-// const totalPrice = products.reduce((accumulator, item) => {
-//     if (typeof item.price === 'number' && !isNaN(item.price)) {
-//       return accumulator + item.price;
-//     } else {
-//       return accumulator;
-//     }
-//   }, 0);
-
-
 const sumOfProducts = products.reduce((acc, item) => {
     if (typeof item.price === 'number') {
         return acc + item.price;
@@ -33,6 +24,7 @@ console.log(sumOfProducts);
 
 // 3. Declare a function called categorizeCountries which returns an array of countries which have some common pattern
 //(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+
 function categorizeCountries(arr) {
     const filteredCountry = arr
     .map(item => item.name)
@@ -60,8 +52,7 @@ function countStartingLetters(countries) {
    }    
   }
   const sortedLetters = Object.entries(letterCount);
-  console.log(sortedLetters)
-
+        sortedLetters.sort()
   const result = sortedLetters.map(([firstLetter, count]) => ({
     Letter: firstLetter,
     count: count
@@ -96,3 +87,32 @@ console.log(getLastTenCountries(countries));
 
 
 // 7. Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+
+function countCountryInitial(countries) {
+    let initialCount = {};
+
+    for (const country of countries) {
+        const firstLetters = country['name'].charAt(0);
+    
+    for (const firstLetter of firstLetters) {
+        if (initialCount.hasOwnProperty(firstLetter)) {
+            initialCount[firstLetter]++
+        } else {
+            initialCount[firstLetter] = 1;
+        }
+     }
+    }
+
+    const sortedLanguages = Object.entries(initialCount)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 1);
+
+    const result = sortedLanguages.map(([firstLetter, count]) => ({
+        country: firstLetter,
+        count: count
+      }));
+    
+      return result;
+
+}
+console.log(countCountryInitial(countries))

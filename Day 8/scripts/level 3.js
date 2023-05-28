@@ -11,12 +11,12 @@ const personAccount = {
     incomes: 2000,
     expenses: 1400,
     
-    addIncome: function(description, amount) {
-        this.incomes.push({description, amount});
+    addIncome: function(amount) {
+        this.incomes.push({amount});
     },
 
-    addExpenses: function(description, amount) {
-        this.expenses.push({description, amount});
+    addExpenses: function(amount) {
+        this.expenses.push({amount});
     },
 
     totalIncome: function() {
@@ -41,7 +41,6 @@ const personAccount = {
         return `Name: ${this.firstName} ${this.lastName}, Income: ${this.totalIncome()}, Expense: ${this.totalExpense()}`;
       }
 }
-console.log(personAccount);
 
 //
 
@@ -122,6 +121,16 @@ const newUsers = [
 // a. Create a function called signUp which allows user to add to the collection.
 // If user exists, inform the user that he has already an account.
 
+const newUser = {
+    _id: 'jd92ks',
+    username: 'cleff',
+    email: 'cleff@example.com',
+    password: '123456',
+    createdAt: '08/01/2020 11:00 AM',
+    isLoggedIn: false
+};
+
+
 function signUp(newUser) {
     const userExists = newUsers.some(user => user.email === newUser.email);
   
@@ -133,14 +142,7 @@ function signUp(newUser) {
     }
 }
 
-const newUser = {
-    _id: 'jd92ks',
-    username: 'cleff',
-    email: 'cleff@example.com',
-    password: '123456',
-    createdAt: '08/01/2020 11:00 AM',
-    isLoggedIn: false
-};
+
 
 // 2b.  Create a function called signIn which allows user to sign in to the application
 
@@ -168,10 +170,10 @@ function rateProduct(productId, userId, rating) {
     const product = products.find(product => product._id === productId);
 
     if (product) {
-        product.ratings.push({userId, rate: rating});
-        console.log(`Product ${product.name} has been rated ${rating} by user ${userId}`);
+        product.ratings.push({ userId, rate: rating });
+        console.log(`Product ${ product.name } has been rated ${rating} by user ${userId}`);
     } else {
-        console.log(`Product with ID ${productId} not found`);
+        console.log(`Product with ID ${ productId } not found`);
     }
 }
 
@@ -180,8 +182,13 @@ function averageRating(productId) {
     const product = products.find(product => product._id === productId);
 
     if (product) {
-        const totalRating = product.ratings.reduce((acc, curr) => {
-            acc + curr.rate
+        const ratings = product.ratings;
+        
+        if (ratings.length === 0) {
+            console.log("No ratings available for this product.");
+          }
+        const totalRating = ratings.reduce((sum, rating) => {
+            sum + rating.rate
         }, 0);
         const averageRating = totalRating / product.ratings.length;
         return averageRating;
@@ -189,3 +196,5 @@ function averageRating(productId) {
         console.log(`Product with ID ${productId} not found`);
     }
 }
+
+console.log(averageRating('eedfcf'));

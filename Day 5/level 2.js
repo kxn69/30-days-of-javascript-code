@@ -6,27 +6,27 @@ console.log(countries);
 console.log(webTechs)
 
 // 2. First remove all the punctuations and change the string to array and count the number of words in the array
-const text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
-textRegex = /\w+/gi
-let newText = text.match(textRegex)
+const text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
+const textRegex = /\w+/gi;
+const newText = text.match(textRegex);
 console.log(newText);
-console.log(newText.length)
+console.log(newText.length);
 
 //  3. In the following shopping cart add, remove, edit items
 const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
 
 // i. add 'Meat' in the beginning of your shopping cart if it has not been already added
-shoppingCart.unshift('Meat')
+shoppingCart.unshift('Meat');
 
 // ii. add Sugar at the end of you shopping cart if it has not been already added
-shoppingCart.push('Sugar')
+shoppingCart.push('Sugar');
 
 // iii. remove 'Honey' if you are allergic to honey
-shoppingCart.splice(4, 1)
+shoppingCart.splice(4, 1);
 
 // iv. modify Tea to 'Green Tea'
 shoppingCart[3] = 'Green Tea'
-console.log(shoppingCart)
+console.log(shoppingCart);
 
 // 4. In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'.
 // If it does not exist add to the countries list.

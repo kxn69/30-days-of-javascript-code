@@ -16,7 +16,7 @@ console.log(typeof(Number('10')) === typeof(10));
 
 
 // 4. Check if parseFloat('9.8') is equal to 10 if not make it exactly equal with 10.
-let num = parseFloat(9.8);
+const num = parseFloat('9.8');
 console.log(num === 10);
 console.log(Math.round(num) === 10);
 
@@ -27,7 +27,7 @@ console.log('jargon'.includes('on'));
 
 
 // 6. I hope this course is not full of jargon. Check if jargon is in the sentence.
-let sent1 = 'I hope this course is not full of jargon'
+const sent1 = 'I hope this course is not full of jargon'
 console.log(sent1.search('jargon'));
 
 
@@ -65,7 +65,7 @@ console.log('5\t1\t5\t25\t125');
 // 12. Use substr to slice out the phrase because because because from the following sentence:
 // 'You cannot end a sentence with because because because is a conjunction'
 const string2 = 'You cannot end a sentence with because because because is a conjunction';
-let startOfBecause = string2.indexOf('because');
-let endOfBecause = string2.lastIndexOf('because') + 7;
-remBecuase = string2.substring(startOfBecause, endOfBecause);
-console.log(remBecuase);
+const startOfBecause = string2.indexOf('because');
+const endOfBecause = string2.lastIndexOf('because') + 7;
+remBecause = string2.substring(startOfBecause, endOfBecause);
+console.log(remBecause);

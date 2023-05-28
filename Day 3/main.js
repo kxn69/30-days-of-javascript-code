@@ -30,14 +30,14 @@ console.log(parseInt('9.8') === 10);
 
 // 4. Boolean value is either true or false.
 // i. Write three JavaScript statement which provide truthy value.
-let isCoding = true;
-let trueValue = 5 > 3;
-let trueValue2 = 4 > 1;
+const isCoding = true;
+const trueValue = 5 > 3;
+const trueValue2 = 4 > 1;
 
 // ii. Write three JavaScript statement which provide falsy value.
-let falValue = null;
-let emptyStr = "";
-let isSleeping = false;
+const falValue = null;
+const emptyStr = "";
+const isSleeping = false;
 
 
 // 5. Figure out the result of the following comparison expression first without using console.log().
@@ -55,8 +55,8 @@ let isSleeping = false;
 4 === '4' // false
 
 // xii. finding the length of python and jargon
-let py = 'python'.length;
-let jr = 'jargon'.length;
+const py = 'python'.length;
+const jr = 'jargon'.length;
 console.log(py < jr);
 
 

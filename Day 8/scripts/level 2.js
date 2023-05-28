@@ -66,18 +66,25 @@ for (const user in users) {
   }
 }
 
-console.log('User with highest skill is:', skilledUser);
+console.log('User with highest skills is:', skilledUser);
 
 // 2. Count logged in users, count users having greater than equal to 50 points from the following object.
 let userCount = 0;
+let isLoggedInCount = 0;
 for (const user in users) {
-    const userPoint = users[user].points;
+  const loginCheck = users[user].isLoggedIn;
+  const userPoint = users[user].points;
+
+    if (loginCheck === true) {
+      isLoggedInCount++
+    }
 
     if (userPoint >= 50) {
        userCount++
     }
 }
-console.log(userCount);
+console.log('users logged in is: ', isLoggedInCount);
+console.log('users point greater than 50 is: ', userCount);
 
 
 // 3. Find people who are MERN stack developer from the users object
