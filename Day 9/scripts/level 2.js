@@ -116,3 +116,5 @@ function countCountryInitial(countries) {
 
 }
 console.log(countCountryInitial(countries))
+
+
