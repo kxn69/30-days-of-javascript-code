@@ -171,12 +171,12 @@ class Statistics {
   
 const statistics = new Statistics(data);
   
-console.log('Count:', statistics.count()); // 25
-console.log('Sum: ', statistics.sum()); // 744
-console.log('Min: ', statistics.min()); // 24
-console.log('Max: ', statistics.max()); // 38
-console.log('Range: ', statistics.range()); // 14
-console.log('Mean: ', statistics.mean()); // 30
-console.log('Median: ',statistics.median()); // 29
-console.log('Mode: ', statistics.mode()); // { mode: [26], count: 5 }
-console.log('Variance: ', statistics.var()); // 17.52
+console.log('Count:', statistics.count());
+console.log('Sum: ', statistics.sum());
+console.log('Min: ', statistics.min());
+console.log('Max: ', statistics.max());
+console.log('Range: ', statistics.range());
+console.log('Mean: ', statistics.mean());
+console.log('Median: ',statistics.median());
+console.log('Mode: ', statistics.mode());
+console.log('Variance: ', statistics.var()); 
