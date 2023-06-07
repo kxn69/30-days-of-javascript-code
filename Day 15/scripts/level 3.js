@@ -102,4 +102,4 @@ console.log('Mean: ', statistics.mean());
 console.log('Median: ',statistics.median());
 console.log('Mode: ', statistics.mode());
 console.log('Variance: ', statistics.var());
-console.log('Frequency distribution: ', statistics.freqDist() )
+console.log('Frequency distribution: ', statistics.freqDist())
