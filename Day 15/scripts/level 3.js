@@ -56,7 +56,7 @@ class Statistics {
         let count = counts.get(value) || 0;
         count++;
         counts.set(value, count);
-  
+
         if (count > maxCount) {
           maxCount = count;
           mode = [value]
@@ -102,3 +102,4 @@ console.log('Mean: ', statistics.mean());
 console.log('Median: ',statistics.median());
 console.log('Mode: ', statistics.mode());
 console.log('Variance: ', statistics.var());
+console.log('Frequency distribution: ', statistics.freqDist() )
