@@ -1,2 +1,15 @@
-console.log(countries)
-alert('Open the console and check if the countries has been loaded')
+// Exercises: Level 1
+
+// 1. Create a closure which has one inner function
+
+function helloWorld() {
+    let sayHello = 'Helloooo World!!!'
+
+    function sayHelloWorld() {
+        console.log(sayHello)
+    }
+    return sayHelloWorld
+}
+
+const sayHello = helloWorld()
+sayHello()
