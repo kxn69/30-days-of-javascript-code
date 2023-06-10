@@ -12,20 +12,20 @@ document.querySelector('className')
 - getting elements using querySelectorAll
 document.querySelectorAll('tagName')
 
-* How to add Attribute
+ How to add Attribute
 - Adding attribute using setAttribute
 - Adding attribute without setAttribute
 
-* I learnt about how to add Attribute
+ I learnt about how to add Attribute
 - how to add attribute using setAttribute
 - how to add without setAttribute
 
-* classList
+ classList
 - Adding class using classLIst
 - removing class using classList
 
-* Also learnt how to add text to HTML element using:
+ Also learnt how to add text to HTML element using:
 - textContent
 - innerHTML
 
-* And lastly how to add style 
+ And lastly how to add style 
