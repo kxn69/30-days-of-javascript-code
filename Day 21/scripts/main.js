@@ -99,9 +99,12 @@ setInterval(updateTime, 1000);
 // Insert the time and date element between the <h2> and <ul> elements
 h2Element.insertAdjacentElement('afterend', timeDateElement);
 
-// adding border to timeDate element
-// timeDateElement.style.border = '4px solid black';
+
+// timeDateElement display to inline block
 timeDateElement.style.display = 'inline-block';
+
+// timeDateElement padding
+timeDateElement.style.padding = '5px'
 
 // function to update date and time color
 function updateDateColor() {
