@@ -5,6 +5,7 @@ const { description,
   challengeYear, 
   challenges,
   author,
+  keywords,
  } = asabenehChallenges2020;
 
 // get body element using querySelector
@@ -51,35 +52,41 @@ wrapper.style.width = '50%';
 wrapper.style.margin = '50px auto'
 
 //  iterating through challenges to get name, topics and status
-let span;
+let challengesDiv;
 challenges.forEach((challenge, index) => {
-  span = document.createElement('span');
+  challengesDiv = document.createElement('div');
   const { name, topics, status } = challenge;
 
-// Create separate <span> elements for name, topics, and status
+// Create nameSpan element
 const nameSpan = document.createElement('span');
 nameSpan.textContent = name;
 nameSpan.style.padding = '20px';
 nameSpan.style.fontFamily = 'calibri';
 
-// create span element for topic
-const topicsDiv = document.createElement('div');
-topicsDiv.style.display = 'inline-block'; 
-topicsDiv.style.position = 'relative';
+// create topicsMainSpan element
+const topicsMainSpan = document.createElement('span');
+topicsMainSpan.style.display = 'inline-block'; 
+topicsMainSpan.style.position = 'relative';
 
-//crate p element 
+//crate topicsSpan element 
 const topicsSpan = document.createElement('p');
 topicsSpan.style.cursor = 'pointer';
-const topicNames = name.slice(10)
+const topicNames = name.slice(10);
 topicsSpan.textContent = `▶ ${topicNames}`;
 
-// create span element for topicsDropdown
-const topicsDropdown = document.createElement('span');
-
-topicsDropdown.textContent = topics.join(' ')
+// create topicsDropdown element
+const topicsDropdown = document.createElement('div');
 topicsDropdown.style.display = 'none';
 
-// eventListener for topics drop down
+// iterate through topics
+topics.forEach((topic) => {
+  const topicList = document.createElement('span');
+  topicList.textContent = topic;
+  topicList.style.display = 'block';
+  topicsDropdown.appendChild(topicList);
+});
+
+// eventListener for topicsDropdown
 let isDropdownOpen = true;
 topicsSpan.addEventListener('click', () => {
 if (isDropdownOpen) {
@@ -91,48 +98,47 @@ if (isDropdownOpen) {
 isDropdownOpen = !isDropdownOpen;
 
 topicsDropdown.style.display = topicsDropdown.style.display === 'none' ? 'block' : 'none';
-topicsDropdown.style.maxWidth = '70px';
 });
 
-// create span element for status
+// create statusSpan element
 const statusSpan = document.createElement('span');
 statusSpan.textContent = status;
 statusSpan.style.padding = '20px';
 statusSpan.style.textAlign = 'right';
-statusSpan.style.fontFamily = 'calibri';
 
-// Append to topicsDiv
-topicsDiv.appendChild(topicsSpan);
-topicsDiv.appendChild(topicsDropdown);
+// Append to topicsMainSpan
+topicsMainSpan.appendChild(topicsSpan);
+topicsMainSpan.appendChild(topicsDropdown);
 
-// Append the separate <span> elements to the main <span> wrapper
-span.appendChild(nameSpan);
-span.appendChild(topicsDiv);
-span.appendChild(statusSpan);
+// Append nameSpan, topicsMainSpan and statusSpan to ...
+challengesDiv.appendChild(nameSpan);
+challengesDiv.appendChild(topicsMainSpan);
+challengesDiv.appendChild(statusSpan);
 
 // Styling the main span container
-span.style.width = '100%';
-span.style.marginBottom = '10px'; 
-span.style.display = 'flex';
-span.style.justifyContent = 'space-between';
-span.style.margin = '1px auto';
-span.style.alignItems = 'center';
+challengesDiv.style.width = '100%';
+challengesDiv.style.marginBottom = '10px'; 
+challengesDiv.style.display = 'flex';
+challengesDiv.style.justifyContent = 'space-between';
+challengesDiv.style.margin = '1px auto';
+challengesDiv.style.alignItems = 'center';
 
 if (index === 0) {
-  span.style.backgroundColor = '#51cb65';
+  challengesDiv.style.backgroundColor = '#51cb65';
 } else if (index === 1) {
-  span.style.backgroundColor = '#f4ea50';
+  challengesDiv.style.backgroundColor = '#f4ea50';
 } else {
-  span.style.backgroundColor = '#dc5748';
+  challengesDiv.style.backgroundColor = '#dc5748';
 }
 
-wrapper.appendChild(span);
+wrapper.appendChild(challengesDiv);
 });
 
-// create the tutor info div
+// create the tutorInfo div
 const tutorInfoDiv = document.createElement('div');
 const tutorInfoClass = tutorInfoDiv.classList.add('tutor-info');
-// destructure the author object
+
+// Destructure the author object
 const { firstName, lastName, titles, qualifications, socialLinks, skills} = author;
 
 const nameHeading = document.createElement('h3')
@@ -143,9 +149,9 @@ nameHeading.style.fontSize = '24px';
 const socialIconsDiv = document.createElement('div');
 socialIconsDiv.style.display = 'flex';
 socialIconsDiv.style.gap = '20px';
-socialIconsDiv.style.justifyContent = 'center'
-// Iterate over the social links and create an icon for each
+socialIconsDiv.style.justifyContent = 'center';
 
+// Iterate over the social links and create an icon for each
 socialLinks.forEach((link) => {
 const socialLink = document.createElement('a');
 socialLink.href = link.url;
@@ -160,10 +166,7 @@ socialLink.appendChild(icon);
 socialIconsDiv.appendChild(socialLink);
 });
 
-// insert tutorInfoDiv after wrapper element
-wrapper.insertAdjacentElement('afterend', tutorInfoDiv);
-
-// create tutor bio
+// create tutorBio element
 const tutorBio = document.createElement('p');
 tutorBio.innerHTML = author.bio;
 tutorBio.style.margin = '40px auto';
@@ -178,10 +181,10 @@ mainTitleSkillsDiv.style.width = '48%';
 mainTitleSkillsDiv.style.margin = 'auto';
 mainTitleSkillsDiv.style.justifyContent = 'space-evenly';
 
-//  create titleDiv
+//  create titleDiv element
 const titleDiv = document.createElement('div');
 
-// create titleText
+// create titleText element
 const titleText = document.createElement('h4');
 titleText.textContent = 'Titles';
 titleText.style.margin = 'auto';
@@ -194,7 +197,7 @@ titles.forEach((title) => {
   titlesArray.push(`${title[0]} ${title[1]}`)
 })
 
-//
+// iterate through the titleArray
 let titleList;
 titlesArray.forEach((title) => {
   titleList = document.createElement('span');
@@ -213,7 +216,6 @@ skillsText.style.margin = 'auto';
 skillsDiv.appendChild(skillsText);
 
 // create skills list
-
 skills.forEach((skill) => {
   const skillsList = document.createElement('span');
   skillsList.textContent = '✅' + skill;
@@ -251,7 +253,47 @@ mainTitleSkillsDiv.appendChild(qualificationsDiv);
 tutorInfoDiv.appendChild(nameHeading);
 tutorInfoDiv.appendChild(socialIconsDiv);
 tutorInfoDiv.appendChild(tutorBio);
-tutorInfoDiv.appendChild(mainTitleSkillsDiv)
+tutorInfoDiv.appendChild(mainTitleSkillsDiv);
+
+// insert tutorInfoDiv after wrapper element
+wrapper.insertAdjacentElement('afterend', tutorInfoDiv);
+
+// create keyWordsDiv element
+const keyWordsDiv = document.createElement('div');
+keyWordsDiv.classList.add('keywords');
+keyWordsDiv.style.width = '40%';
+keyWordsDiv.style.margin = 'auto';
+
+// create keyWord text
+const keyWordText = document.createElement('h4');
+keyWordText.textContent = 'Keywords';
+keyWordText.style.textAlign = 'left';
+
+keyWordsDiv.appendChild(keyWordText);
+
+// create keyWordsContainer element
+const keyWordsContainer = document.createElement('div');
+keyWordsContainer.style.display = 'flex';
+keyWordsContainer.style.flexWrap = 'wrap';
+keyWordsContainer.style.justifyContent = 'center';
+
+keywords.forEach((keyword) => {
+  const span = document.createElement('span');
+  span.textContent = '#' + keyword;
+  span.style.borderRadius = '10px';
+  span.style.padding = '2px';
+  span.style.margin = '2px';
+  span.style.fontStyle = 'italic';
+  span.style.backgroundColor = getRandomColor(), 0.1;
+  
+  keyWordsContainer.appendChild(span);
+})
+
+// append the keyWordsContainer to keyWordsDiv
+keyWordsDiv.appendChild(keyWordsContainer);
+
+// insert keyWordsDiv after tutorInfoDiv
+tutorInfoDiv.insertAdjacentElement('afterend', keyWordsDiv);
 
 // FUNCTIONS
 
@@ -307,6 +349,3 @@ updateDateColor();
 
 // update color every second
 setInterval(updateDateColor, 1000)
-
-//
-
