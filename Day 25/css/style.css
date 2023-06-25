@@ -1,11 +1,12 @@
 body {
     text-align: center;
-    font-family: 'montserrat', calibri;
+    font-family: 'montserrat', 'calibri';
 }
 
 #countries {
     background-color: #f0f0f0;
     padding: 20px;
+    box-shadow: 2px 2px 8px 1px #c6c5c3;
 }
 
 #countries > h2 {
@@ -21,7 +22,6 @@ body {
 }
 
 .graph-buttons {
-    border: 2px solid red;
     height: 70px;
     margin: auto;
 }
@@ -50,7 +50,6 @@ button:hover {
 }
 
 .graphs {
-    /* border: 2px solid blue; */
     background-color: #f0f0f0;
     margin: auto;
     padding: 30px;
@@ -60,7 +59,7 @@ button:hover {
 .graph-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     width: 50%;
     margin: auto;
   }
@@ -68,14 +67,13 @@ button:hover {
 .progress-bar {
 height: 40px;
 overflow: hidden;
-
 display: flex;
 align-items: center;
 }
 
 .progress-bar-container {
     height: 100%;
-    width: 500px;
+    width: 65%;
     
 }
 .progress-bar-fill {
@@ -87,13 +85,15 @@ border-radius: 3px;
 
 .progress-bar-label {
 display: inline-block;
-width: 40px;
-font-size: 16px;
-margin-right: 80px;
+width: 20%;
+font-size: 12px;
+margin-right: 60px;
 padding-left: 5px;
 }
 
 .population-amount {
     display: inline-block;
     margin-left: 30px;
+    font-size: 12px;
+    width: 15%;
 }
