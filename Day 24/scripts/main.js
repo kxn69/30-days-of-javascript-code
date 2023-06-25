@@ -71,6 +71,8 @@ const flexItemDescription = document.querySelector('.flex-item.description');
 flexItemDescription.style.color = 'white';
 flexItemDescription.style.fontSize = '20px';
 flexItemDescription.style.margin = 'auto';
+flexItemDescription.style.backgroundColor = 'rgba(143, 160, 164, 0.2)';
+flexItemDescription.style.width = '444px';
 
 // create description element
 const description = document.createElement('p');

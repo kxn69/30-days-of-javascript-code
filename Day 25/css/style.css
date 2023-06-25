@@ -1,0 +1,99 @@
+body {
+    text-align: center;
+    font-family: 'montserrat', calibri;
+}
+
+#countries {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+#countries > h2 {
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: orange;
+    margin: auto;
+    font-weight: normal;
+}
+
+#countries > p {
+    margin: auto;
+}
+
+.graph-buttons {
+    border: 2px solid red;
+    height: 70px;
+    margin: auto;
+}
+
+button {
+    background-color: orange;
+    border: none;
+    padding: 5px;
+    width: 100px;
+    text-transform: uppercase;
+    font-family: montserrat;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.graph-title {
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.graphs {
+    /* border: 2px solid blue; */
+    background-color: #f0f0f0;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 2px 2px 8px 1px #c6c5c3;
+}
+
+.graph-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin: auto;
+  }
+  
+.progress-bar {
+height: 40px;
+overflow: hidden;
+
+display: flex;
+align-items: center;
+}
+
+.progress-bar-container {
+    height: 100%;
+    width: 500px;
+    
+}
+.progress-bar-fill {
+height: 100%;
+background-color: orange;
+transition: width 0.3s ease-in-out;
+border-radius: 3px;
+}
+
+.progress-bar-label {
+display: inline-block;
+width: 40px;
+font-size: 16px;
+margin-right: 80px;
+padding-left: 5px;
+}
+
+.population-amount {
+    display: inline-block;
+    margin-left: 30px;
+}
