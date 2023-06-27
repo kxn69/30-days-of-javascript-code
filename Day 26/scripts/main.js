@@ -103,7 +103,11 @@ searchBar.addEventListener('input', event => {
 function searchThroughAnyLetter(value) {
     const regex = new RegExp(value, 'gi');
     const filteredCountries = countries.filter((item) => item.match(regex));
-    countriesCount.innerHTML = `Countries containing <span style="color:${getRandomColor()}">${value}</span> are <span style="color:${getRandomColor()}">${filteredCountries.length}</span>`;
+    if (value.length >= 1) {
+        countriesCount.innerHTML = `Countries containing <span style="color:${getRandomColor()}">${value}</span> are <span style="color:${getRandomColor()}">${filteredCountries.length}</span>`;
+    } else {
+        countriesCount.innerHTML = '';
+    }
     displayCountries(filteredCountries);
 }
 
@@ -111,7 +115,11 @@ function searchThroughAnyLetter(value) {
 function searchThroughStartingLetter(value) {
     const regex = new RegExp('^' + value, 'gi');
     const filteredCountries = countries.filter((item) => item.match(regex));
-    countriesCount.innerHTML = `Countries that starts with <span style="color:${getRandomColor()}">${value}</span> are <span style="color:${getRandomColor()}">${filteredCountries.length}</span>`;
+    if (value.length >= 1) {
+        countriesCount.innerHTML = `Countries that starts with <span style="color:${getRandomColor()}">${value}</span> are <span style="color:${getRandomColor()}">${filteredCountries.length}</span>`;
+    } else {
+        countriesCount.innerHTML = '';
+    }
     displayCountries(filteredCountries);
 }
 
