@@ -2,16 +2,12 @@
 
 // 1. Linear equation is calculated as follows: ax + by + c = 0.
 // Write a function which calculates value of a linear equation, solveLinEquation.
-
 function solveLinEquation(a, b, c, x) {
     return (-c - (a * x)) / b;
   }
   
-
-
 // 2. Quadratic equation is calculated as follows: ax2 + bx + c = 0.
 // Write a function which calculates value or values of a quadratic equation, solveQuadEquation.
-
 function solveQuadEquation(a, b, c) {
     const discriminant = (b * b) - (4 * a * c);
   
@@ -28,7 +24,6 @@ function solveQuadEquation(a, b, c) {
   }
 
 // 3. Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
-
 const printArray = arr => {
     for (element of arr) {
         console.log(element)
@@ -37,9 +32,7 @@ const printArray = arr => {
 const numbers = [1,2,3,4,5]
 printArray(numbers)
 
-
 // 4. Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object.
-
 const showDateTime = () => {
     let now = new Date();
     let year = now.getFullYear();
@@ -56,9 +49,7 @@ const showDateTime = () => {
 
 console.log(showDateTime());
 
-
 // 5. Declare a function name swapValues. This function swaps value of x to y.
-
 const swapValues = (x, y) => {
     let temp = x;
     x = y;
@@ -82,27 +73,26 @@ const reverseArray = arr => {
 
 console.log(reverseArray(array))
 
-
 // 7. Declare a function name capitalizeArray.
 // It takes array as a parameter and it returns the - capitalizedArray.
-
 const names = ['randy', 'dondy', 'mondy', 'sondy'];
 
 function capitalizedArray (arr) {
     const capitalized = [];
 
     for (let i = 0; i < arr.length; i++) {
-        let capital = arr[i].toUpperCase();
-        capitalized.push(capital);
+        let capitalize = arr[i][0].toUpperCase();
+        let remain = arr[i].substring(1,);
+        let word = `${capitalize}${remain}`;
+        capitalized.push(word);
     }
     return capitalized;
 }
-console.log(capitalizedArray(names));
 
+console.log(capitalizedArray(names));
 
 // 8. Declare a function name addItem.
 // It takes an item parameter and it returns an array after adding the item
-
 const addItem = (item) => {
     const returnedArray = [];
 
@@ -111,10 +101,8 @@ const addItem = (item) => {
 }
 console.log(addItem('corn'))
 
-
 // 9. Declare a function name removeItem.
 // It takes an index parameter and it returns an array after removing an item
-
 const removeItem = (array, index) => {
     array.splice(index, 1);
 
@@ -123,10 +111,8 @@ const removeItem = (array, index) => {
 
 console.log(removeItem(names, 1));
 
-
 // 10. Declare a function name sumOfNumbers.
 // It takes a number parameter and it adds all the numbers in that range.
-
 const sumOfNumbers = (...num) => {
     let sum = 0;
     for (let i = 0; i < num.length; i++) {
@@ -136,10 +122,8 @@ const sumOfNumbers = (...num) => {
 }
 console.log(sumOfNumbers(3, 3, 4));
 
-
 // 11. Declare a function name sumOfOdds.
 // It takes a number parameter and it adds all the odd numbers in that - range.
-
 const sumOfOdds = (...num) => {
     let sum = 0;
 
@@ -152,10 +136,8 @@ const sumOfOdds = (...num) => {
 }
 console.log(sumOfOdds(1, 2, 3, 4, 5, 6, 7))
 
-
 // 12. Declare a function name sumOfEven.
 // It takes a number parameter and it adds all the even numbers in that - range.
-
 const sumOfEven = (...num) => {
     let sum = 0;
 
@@ -168,10 +150,8 @@ const sumOfEven = (...num) => {
 }
 console.log(sumOfEven(1, 2, 3, 4, 5, 6, 7))
 
-
 // 13. Declare a function name evensAndOdds .
 // It takes a positive integer as parameter and it counts number of evens and odds in the number.
-
 const evensAndOdds = (...num) => {
     let evenCount = 0;
     let oddCount = 0;
@@ -188,9 +168,7 @@ const evensAndOdds = (...num) => {
 }
 evensAndOdds(1, 2, 3, 4, 5, 6, 7);
 
-
 // 14. Write a function which takes any number of arguments and return the sum of the arguments
-
 function sumOfArgs() {
     let total = 0;
 
@@ -201,9 +179,7 @@ function sumOfArgs() {
 }
 console.log(sumOfArgs(1,2,3));
 
-
 // 15. Write a function which generates a randomUserIp.
-
 function generateRandomIP() {
     const num1 = Math.floor(Math.random() * 256);
     const num2 = Math.floor(Math.random() * 256);
@@ -213,9 +189,7 @@ function generateRandomIP() {
   }
 console.log(generateRandomIP());
 
-
 // 16. Write a function which generates a randomMacAddress
-
 function generateRandomMAC() {
     let mac = '';
     for (let i = 0; i < 6; i++) {
@@ -224,13 +198,12 @@ function generateRandomMAC() {
     }
     return mac.toUpperCase();
   }
-  console.log(generateRandomMAC())
 
+  console.log(generateRandomMAC())
 
   // 17. Declare a function name randomHexaNumberGenerator.
   // When this function is called it generates a random hexadecimal number.
   // The function return the hexadecimal number.
-
 function randomHexaNumberGenerator() {
     let hex = '';
     for (let i = 0; i < 6; i++) {
@@ -240,12 +213,11 @@ function randomHexaNumberGenerator() {
     }
     return hex;
 }
-console.log(randomHexaNumberGenerator());
 
+console.log(randomHexaNumberGenerator());
 
 // 18. Declare a function name userIdGenerator.
 // When this function is called it generates seven character id. The function return the id.
-
 function userIdGenerator() {
     let id = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
