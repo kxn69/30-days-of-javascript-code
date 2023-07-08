@@ -73,6 +73,7 @@ flexItemDescription.style.fontSize = '20px';
 flexItemDescription.style.margin = 'auto';
 flexItemDescription.style.backgroundColor = 'rgba(143, 160, 164, 0.2)';
 flexItemDescription.style.width = '444px';
+flexItemDescription.style.display = 'none';
 
 // create description element
 const description = document.createElement('p');
@@ -93,12 +94,13 @@ planetImage.style.width = '300px';
 planetImage.style.height = '300px';
 planetImage.style.padding = '40px';
 
-
 // add event listener
 button.addEventListener('click', event => {
     const inputValue = parseFloat(input.value);
     const selectedOption = select.value;
     const selectedPlanet = select.value.toUpperCase();
+    
+    flexItemDescription.style.display = 'block';
 
     // if input has no value
     if (input.value === "") {
