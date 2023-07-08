@@ -1,0 +1,39 @@
+.background {
+    width: 97vw;
+    height: 97vh;
+    margin: auto;
+}
+
+.sentence {
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+.display {
+    text-transform: uppercase;
+    font-size: 6em;
+    word-spacing: 20px;
+    line-height: 150px;
+}
+
+@keyframes random {
+    0% {
+        opacity: 0;
+      }
+    
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+    opacity: 0;
+    }
+}
+
+.sentence-animation {
+    animation: random 4s ease-in-out;
+}
